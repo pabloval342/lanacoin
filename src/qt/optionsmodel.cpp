@@ -40,13 +40,13 @@ void OptionsModel::Init()
 
     // These are Qt-only settings:
     nDisplayUnit = settings.value("nDisplayUnit", BitcoinUnits::BTC).toInt();
-    fMinimizeToTray = settings.value("fMinimizeToTray", false).toBool();
-    fMinimizeOnClose = settings.value("fMinimizeOnClose", false).toBool();
+    fMinimizeToTray = settings.value("fMinimizeToTray", true).toBool();
+    fMinimizeOnClose = settings.value("fMinimizeOnClose", true).toBool();
     fCoinControlFeatures = settings.value("fCoinControlFeatures", false).toBool();
     nTransactionFee = settings.value("nTransactionFee").toLongLong();
     nReserveBalance = settings.value("nReserveBalance").toLongLong();
     language = settings.value("language", "").toString();
-    fUseBlackTheme = settings.value("fUseBlackTheme", true).toBool();
+    fUseBlackTheme = settings.value("fUseBlackTheme", false).toBool();
 
     // These are shared with core Bitcoin; we want
     // command-line options to override the GUI settings:

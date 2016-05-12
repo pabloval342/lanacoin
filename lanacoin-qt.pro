@@ -1,6 +1,6 @@
 TEMPLATE = app
-TARGET = blackcoin-qt
-VERSION = 1.2.2
+TARGET = lanacoin-qt
+VERSION = 1.0.0
 INCLUDEPATH += src src/json src/qt
 QT += network
 DEFINES += ENABLE_WALLET
@@ -165,7 +165,6 @@ HEADERS += src/qt/bitcoingui.h \
     src/hash.h \
     src/uint256.h \
     src/kernel.h \
-    src/scrypt.h \
     src/pbkdf2.h \
     src/serialize.h \
     src/core.h \
@@ -299,10 +298,6 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/rpcconsole.cpp \
     src/noui.cpp \
     src/kernel.cpp \
-    src/scrypt-arm.S \
-    src/scrypt-x86.S \
-    src/scrypt-x86_64.S \
-    src/scrypt.cpp \
     src/pbkdf2.cpp
 
 RESOURCES += \
@@ -401,7 +396,7 @@ macx:OBJECTIVE_SOURCES += src/qt/macdockiconhandler.mm
 macx:LIBS += -framework Foundation -framework ApplicationServices -framework AppKit
 macx:DEFINES += MAC_OSX MSG_NOSIGNAL=0
 macx:ICON = src/qt/res/icons/bitcoin.icns
-macx:TARGET = "BlackCoin-Qt"
+macx:TARGET = "Lanacoin-Qt"
 macx:QMAKE_CFLAGS_THREAD += -pthread
 macx:QMAKE_LFLAGS_THREAD += -pthread
 macx:QMAKE_CXXFLAGS_THREAD += -pthread

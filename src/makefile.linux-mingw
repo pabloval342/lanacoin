@@ -88,9 +88,6 @@ OBJS= \
     obj/noui.o \
     obj/kernel.o \
     obj/pbkdf2.o \
-    obj/scrypt.o \
-    obj/scrypt-x86.o \
-    obj/scrypt-x86_64.o \
     obj/chainparams.o
 
 ifeq (${USE_WALLET}, 1)
@@ -105,7 +102,7 @@ ifeq (${USE_WALLET}, 1)
         obj/walletdb.o
 endif
 
-all: blackcoind.exe
+all: lanacoind.exe
 
 LIBS += $(CURDIR)/leveldb/libleveldb.a $(CURDIR)/leveldb/libmemenv.a
 DEFS += -I"$(CURDIR)/leveldb/include"
@@ -123,19 +120,13 @@ DEFS += -DHAVE_BUILD_INFO
 obj/%.o: %.cpp $(HEADERS)
 	$(CXX) -c $(CFLAGS) -o $@ $<
 
-blackcoind.exe: $(OBJS:obj/%=obj/%)
+lanacoind.exe: $(OBJS:obj/%=obj/%)
 	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS) -lshlwapi
-	$(STRIP) blackcoind.exe
-
-obj/scrypt-x86.o: scrypt-x86.S
-	$(CXX) -c $(CFLAGS) -MMD -o $@ $<
-
-obj/scrypt-x86_64.o: scrypt-x86_64.S
-	$(CXX) -c $(CFLAGS) -MMD -o $@ $<
+	$(STRIP) lanacoind.exe
 
 clean:
 	-rm -f obj/*.o
-	-rm -f blackcoind.exe
+	-rm -f lanacoind.exe
 	-rm -f obj/build.h
 	cd leveldb && TARGET_OS=OS_WINDOWS_CROSSCOMPILE $(MAKE) clean && cd ..
 

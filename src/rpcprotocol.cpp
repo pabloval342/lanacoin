@@ -8,6 +8,7 @@
 #include "util.h"
 
 #include <stdint.h>
+#include <fstream>
 
 #include <boost/algorithm/string.hpp>
 #include <boost/asio.hpp>
@@ -37,7 +38,7 @@ string HTTPPost(const string& strMsg, const map<string,string>& mapRequestHeader
 {
     ostringstream s;
     s << "POST / HTTP/1.1\r\n"
-      << "User-Agent: blackcoin-json-rpc/" << FormatFullVersion() << "\r\n"
+      << "User-Agent: lanacoin-json-rpc/" << FormatFullVersion() << "\r\n"
       << "Host: 127.0.0.1\r\n"
       << "Content-Type: application/json\r\n"
       << "Content-Length: " << strMsg.size() << "\r\n"
@@ -60,7 +61,7 @@ string HTTPReply(int nStatus, const string& strMsg, bool keepalive)
     if (nStatus == HTTP_UNAUTHORIZED)
         return strprintf("HTTP/1.0 401 Authorization Required\r\n"
             "Date: %s\r\n"
-            "Server: blackcoin-json-rpc/%s\r\n"
+            "Server: lanacoin-json-rpc/%s\r\n"
             "WWW-Authenticate: Basic realm=\"jsonrpc\"\r\n"
             "Content-Type: text/html\r\n"
             "Content-Length: 296\r\n"
@@ -87,7 +88,7 @@ string HTTPReply(int nStatus, const string& strMsg, bool keepalive)
             "Connection: %s\r\n"
             "Content-Length: %u\r\n"
             "Content-Type: application/json\r\n"
-            "Server: blackcoin-json-rpc/%s\r\n"
+            "Server: lanacoin-json-rpc/%s\r\n"
             "\r\n"
             "%s",
         nStatus,
@@ -252,3 +253,66 @@ Object JSONRPCError(int code, const string& message)
     error.push_back(Pair("message", message));
     return error;
 }
+
+/** Username used when cookie authentication is in use (arbitrary, only for
+  * recognizability in debugging/logging purposes)
+  */
+ static const std::string COOKIEAUTH_USER = "__cookie__";
+ /** Default name for auth cookie file */
+ static const std::string COOKIEAUTH_FILE = "cookie";
+
+ boost::filesystem::path GetAuthCookieFile()
+ {
+     boost::filesystem::path path(GetArg("-rpccookiefile", COOKIEAUTH_FILE));
+     if (!path.is_complete()) path = GetDataDir() / path;
+     return path;
+ }
+
+ bool GenerateAuthCookie(std::string *cookie_out)
+ {
+     unsigned char rand_pwd[32];
+     RAND_bytes(rand_pwd, 32);
+     std::string cookie = COOKIEAUTH_USER + ":" + EncodeBase64(&rand_pwd[0],32);
+
+      /* these are set to 077 in init.cpp unless overridden with -sysperms.
+      */
+     std::ofstream file;
+     boost::filesystem::path filepath = GetAuthCookieFile();
+     file.open(filepath.string().c_str());
+     if (!file.is_open()) {
+         LogPrintf("Unable to open cookie authentication file %s for writing\n", filepath.string());
+         return false;
+     }
+     file << cookie;
+     file.close();
+     LogPrintf("Generated RPC authentication cookie %s\n", filepath.string());
+
+     if (cookie_out)
+         *cookie_out = cookie;
+     return true;
+ }
+
+ bool GetAuthCookie(std::string *cookie_out)
+ {
+     std::ifstream file;
+     std::string cookie;
+     boost::filesystem::path filepath = GetAuthCookieFile();
+     file.open(filepath.string().c_str());
+     if (!file.is_open())
+         return false;
+     std::getline(file, cookie);
+     file.close();
+
+     if (cookie_out)
+         *cookie_out = cookie;
+     return true;
+ }
+
+ void DeleteAuthCookie()
+ {
+     try {
+         boost::filesystem::remove(GetAuthCookieFile());
+     } catch (const boost::filesystem::filesystem_error& e) {
+         LogPrintf("%s: Unable to remove random auth cookie file: %s\n", __func__, e.what());
+     }
+ }

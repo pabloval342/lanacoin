@@ -11,7 +11,6 @@
 #include "txmempool.h"
 #include "net.h"
 #include "script.h"
-#include "scrypt.h"
 
 #include <limits>
 #include <list>
@@ -25,7 +24,7 @@ class CReserveKey;
 class CWallet;
 
 /** The maximum allowed size for a serialized block, in bytes (network rule) */
-static const unsigned int MAX_BLOCK_SIZE = 1000000;
+static const unsigned int MAX_BLOCK_SIZE = 5000000;
 /** The maximum size for mined blocks */
 static const unsigned int MAX_BLOCK_SIZE_GEN = MAX_BLOCK_SIZE/2;
 /** The maximum size for transactions we're willing to relay/mine **/
@@ -43,26 +42,19 @@ static const unsigned int DEFAULT_MAX_ORPHAN_BLOCKS = 40;
 /** The maximum number of entries in an 'inv' protocol message */
 static const unsigned int MAX_INV_SZ = 50000;
 /** Fees smaller than this (in satoshi) are considered zero fee (for transaction creation) */
-static const int64_t MIN_TX_FEE = 10000;
+static const int64_t MIN_TX_FEE = 0.00000100 * COIN;
 /** Fees smaller than this (in satoshi) are considered zero fee (for relaying) */
 static const int64_t MIN_RELAY_TX_FEE = MIN_TX_FEE;
 /** No amount larger than this (in satoshi) is valid */
-static const int64_t MAX_MONEY = std::numeric_limits<int64_t>::max();
+static const int64_t MAX_MONEY = 7506000000 * COIN; //total of 7,506 billion coins
 inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 /** Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp. */
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
 
-static const int64_t COIN_YEAR_REWARD = 1 * CENT; // 1% per year
+static const int64_t COIN_YEAR_REWARD = 7 * CENT; // 7% per year
 
-inline bool IsProtocolV1RetargetingFixed(int nHeight) { return TestNet() || nHeight > 38423; }
-inline bool IsProtocolV2(int nHeight) { return TestNet() || nHeight > 319000; }
-inline bool IsProtocolV3(int64_t nTime) { return TestNet() || nTime > 1444028400; }
-
-inline int64_t FutureDriftV1(int64_t nTime) { return nTime + 10 * 60; }
-inline int64_t FutureDriftV2(int64_t nTime) { return nTime + 15; }
-inline int64_t FutureDrift(int64_t nTime, int nHeight) { return IsProtocolV2(nHeight) ? FutureDriftV2(nTime) : FutureDriftV1(nTime); }
-
-inline unsigned int GetTargetSpacing(int nHeight) { return IsProtocolV2(nHeight) ? 64 : 60; }
+inline int64_t FutureDrift(int64_t nTime) { return nTime + 60 * 60 * 20; }
+inline unsigned int GetTargetSpacing(int nHeight) { return 300; } // Block target during PoW phase is 2,5min, after PoW its 5min
 
 extern CScript COINBASE_FLAGS;
 extern CCriticalSection cs_main;
@@ -70,7 +62,6 @@ extern CTxMemPool mempool;
 extern std::map<uint256, CBlockIndex*> mapBlockIndex;
 extern std::set<std::pair<COutPoint, unsigned int> > setStakeSeen;
 extern CBlockIndex* pindexGenesisBlock;
-extern int nStakeMinConfirmations;
 extern unsigned int nStakeMinAge;
 extern unsigned int nNodeLifespan;
 extern int nCoinbaseMaturity;
@@ -147,12 +138,6 @@ void ThreadStakeMiner(CWallet *pwallet);
 /** (try to) add transaction to memory pool **/
 bool AcceptToMemoryPool(CTxMemPool& pool, CTransaction &tx, bool fLimitFree,
                         bool* pfMissingInputs);
-
-
-
-
-
-
 
 /** Position on disk for a particular transaction. */
 class CDiskTxPos
@@ -580,7 +565,7 @@ class CBlock
 {
 public:
     // header
-    static const int CURRENT_VERSION = 7;
+    static const int CURRENT_VERSION = 1;
     int nVersion;
     uint256 hashPrevBlock;
     uint256 hashMerkleRoot;
@@ -650,15 +635,12 @@ public:
 
     uint256 GetHash() const
     {
-        if (nVersion > 6)
-            return Hash(BEGIN(nVersion), END(nNonce));
-        else
-            return GetPoWHash();
+        return GetPoWHash();
     }
 
     uint256 GetPoWHash() const
     {
-        return scrypt_blockhash(CVOIDBEGIN(nVersion));
+        return Hash(BEGIN(nVersion), END(nNonce));
     }
 
     int64_t GetBlockTime() const
@@ -871,7 +853,7 @@ public:
     int64_t nMoneySupply;
 
     unsigned int nFlags;  // ppcoin: block index flags
-    enum  
+    enum
     {
         BLOCK_PROOF_OF_STAKE = (1 << 0), // is proof-of-stake block
         BLOCK_STAKE_ENTROPY  = (1 << 1), // entropy bit for stake modifier
@@ -990,10 +972,7 @@ public:
 
     int64_t GetPastTimeLimit() const
     {
-        if (IsProtocolV2(nHeight))
-            return GetBlockTime();
-        else
-            return GetMedianTimePast();
+        return GetBlockTime();
     }
 
     enum { nMedianTimeSpan=11 };
