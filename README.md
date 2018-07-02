@@ -77,17 +77,17 @@ labeled 'stale'.
 
 Get in touch or stay updated:
 
-https://bitcointalk.org/index.php?topic=1448065
+Forum: https://bitcointalk.org/index.php?topic=1448065
 
-https://www.altcoincalendar.info/coins/2140-LANA
+Twitter: https://twitter.com/LanaCoin
 
-https://cryptocointalk.com/topic/46661-ann-lanacoin-powpos-hybrid-sha256d-7506-b-supply/
+Web: https://lanacoin.com/
 
-https://twitter.com/LanaCoin
+Facebook: https://www.facebook.com/LanaCoins/
 
-https://lanacoin.com/
+Telegram: https://t.me/LanaCoin
 
-https://www.facebook.com/LanaCoins/
+CoinmarketCap: https://coinmarketcap.com/currencies/lanacoin/
 
-https://t.me/LanaCoin
+Blockexplorer: https://chainz.cryptoid.info/lana/
 
