@@ -93,3 +93,5 @@ Blockexplorer: https://chainz.cryptoid.info/lana/
 
 Instagram: https://www.instagram.com/lanacoin.cryptocurrency/
 
+Youtube: https://www.youtube.com/channel/UC23mCMIR7ecKm3cnbOl1laA
+
