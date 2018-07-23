@@ -91,3 +91,5 @@ CoinmarketCap: https://coinmarketcap.com/currencies/lanacoin/
 
 Blockexplorer: https://chainz.cryptoid.info/lana/
 
+Instagram: https://www.instagram.com/lanacoin.cryptocurrency/
+
