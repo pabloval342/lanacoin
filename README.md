@@ -1,7 +1,4 @@
-
-Lanacoin development tree
-
-Lanacoin is a PoS-based cryptocurrency.
+#Lanacoin is a PoS-based cryptocurrency.
 
 Ticker: LANA
 
