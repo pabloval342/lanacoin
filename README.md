@@ -1,4 +1,4 @@
-#Lanacoin is a PoS-based cryptocurrency.
+## Lanacoin is a PoS-based cryptocurrency.
 
 - Ticker: LANA
 
@@ -72,7 +72,7 @@ Issues with no commits will be given a similar warning, and closed after
 15 days from their last activity. Issues closed in this manner will be
 labeled 'stale'.
 
-#Get in touch or stay updated:
+## Get in touch or stay updated:
 
 - Forum: https://bitcointalk.org/index.php?topic=1448065
 
