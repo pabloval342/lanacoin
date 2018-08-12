@@ -1,36 +1,36 @@
 #Lanacoin is a PoS-based cryptocurrency.
 
-Ticker: LANA
+- Ticker: LANA
 
-Type: PoW/PoS hybrid
+- Type: PoW/PoS hybrid
 
-PoW algorithm: sha256d
+- PoW algorithm: sha256d
 
-PoS block hashing: sha256d
+- PoS block hashing: sha256d
 
-Max Coins: 7.506.000.000 (7.5+ bilion)
+- Max Coins: 7.506.000.000 (7.5+ bilion)
 
-PoW reward: 10000 LANA (no halving)
+- PoW reward: 10000 LANA (no halving)
 
-Last PoW block: 750000 (approx 7 years)
+- Last PoW block: 750000 (approx 7 years)
 
-PoS reward: fixed 1000 LANA + 7% (yearly)
+- PoS reward: fixed 1000 LANA + 7% (yearly)
 
-PoS reward halving: 525600 (approx 5 years, halving only for fixed reward, 7% stays the same)
+- PoS reward halving: 525600 (approx 5 years, halving only for fixed reward, 7% stays the same)
 
-Minimum PoS age: 7 hours
+- Minimum PoS age: 7 hours
 
-Maximum PoS age: unlimited
+- Maximum PoS age: unlimited
 
-Block time target: 5 minutes
+- Block time target: 5 minutes
 
-Difficulty retarget: every block
+- Difficulty retarget: every block
 
-Coinbase maturity: 100 blocks
+- Coinbase maturity: 100 blocks
 
-Transaction recommended minimum confirmations: 5
+- Transaction recommended minimum confirmations: 5
 
-Minimal TX fee: 100 Lanoshis (0.00000100 LANA)
+- Minimal TX fee: 100 Lanoshis (0.00000100 LANA)
 
 
 P2P port: 7506
@@ -72,23 +72,23 @@ Issues with no commits will be given a similar warning, and closed after
 15 days from their last activity. Issues closed in this manner will be
 labeled 'stale'.
 
-Get in touch or stay updated:
+#Get in touch or stay updated:
 
-Forum: https://bitcointalk.org/index.php?topic=1448065
+- Forum: https://bitcointalk.org/index.php?topic=1448065
 
-Twitter: https://twitter.com/LanaCoin
+- Twitter: https://twitter.com/LanaCoin
 
-Web: https://lanacoin.com/
+- Web: https://lanacoin.com/
 
-Facebook: https://www.facebook.com/LanaCoins/
+- Facebook: https://www.facebook.com/LanaCoins/
 
-Telegram: https://t.me/LanaCoin
+- Telegram: https://t.me/LanaCoin
 
-CoinmarketCap: https://coinmarketcap.com/currencies/lanacoin/
+- CoinmarketCap: https://coinmarketcap.com/currencies/lanacoin/
 
-Blockexplorer: https://chainz.cryptoid.info/lana/
+- Blockexplorer: https://chainz.cryptoid.info/lana/
 
-Instagram: https://www.instagram.com/lanacoin.cryptocurrency/
+- Instagram: https://www.instagram.com/lanacoin.cryptocurrency/
 
-Youtube: https://www.youtube.com/channel/UC23mCMIR7ecKm3cnbOl1laA
+- Youtube: https://www.youtube.com/channel/UC23mCMIR7ecKm3cnbOl1laA
 
