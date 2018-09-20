@@ -92,3 +92,5 @@ labeled 'stale'.
 
 - Youtube: https://www.youtube.com/channel/UC23mCMIR7ecKm3cnbOl1laA
 
+- Mobile wallet for android: https://play.google.com/store/apps/details?id=com.cryptowallet.si
+
