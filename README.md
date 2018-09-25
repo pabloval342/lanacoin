@@ -84,7 +84,11 @@ labeled 'stale'.
 
 - Telegram: https://t.me/LanaCoin
 
+- Medium: https://medium.com/@LanaCoin/
+
 - CoinmarketCap: https://coinmarketcap.com/currencies/lanacoin/
+
+- Coinpaprika: https://coinpaprika.com/coin/lana-lanacoin/
 
 - Blockexplorer: https://chainz.cryptoid.info/lana/
 
