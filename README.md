@@ -1,5 +1,4 @@
-## Lanacoin is a PoS-based cryptocurrency.
-
+## Lanacoin is a Pow/PoS personalized cryptocurrency
 - Ticker: LANA
 
 - Type: PoW/PoS hybrid
