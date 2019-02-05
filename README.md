@@ -104,80 +104,80 @@ labeled 'stale'.
 ## List of wallet commands
 
 ￼
-*addmultisigaddress <nrequired> <'["key","key"]'> [account]
-*addnode <node> <add|remove|onetry>
-*addredeemscript <redeemScript> [account]
-*backupwallet <destination>
-*checkkernel [{"txid":txid,"vout":n},...] [createblocktemplate=false]
-*checkwallet
-*createrawtransaction [{"txid":txid,"vout":n},...] {address:amount,...}
-*decoderawtransaction <hex string>
-*decodescript <hex string>
-*dumpprivkey <lanacoinaddress>
-*dumpwallet <filename>
-*getaccount <lanacoinaddress>
-*getaccountaddress <account>
-*getaddednodeinfo <dns> [node]
-*getaddressesbyaccount <account>
-*getbalance [account] [minconf=1]
-*getbestblockhash
-*getblock <hash> [txinfo]
-*getblockbynumber <number> [txinfo]
-*getblockcount
-*getblockhash <index>
-*getblocktemplate [params]
-*getcheckpoint
-*getconnectioncount
-*getdifficulty
-*getinfo
-*getmininginfo
-*getnettotals
-*getnewaddress [account]
-*getnewpubkey [account]
-*getpeerinfo
-*getrawmempool
-*getrawtransaction <txid> [verbose=0]
-*getreceivedbyaccount <account> [minconf=1]
-*getreceivedbyaddress <lanacoinaddress> [minconf=1]
-*getstakesubsidy <hex string>
-*getstakinginfo
-*getsubsidy [nTarget]
-*gettransaction <txid>
-*getwork [data]
-*getworkex [data, coinbase]
-*help [command]
-*importprivkey <lanacoinprivkey> [label] [rescan=true]
-*importwallet <filename>
-*keypoolrefill [new-size]
-*listaccounts [minconf=1]
-*listaddressgroupings
-*listreceivedbyaccount [minconf=1] [includeempty=false]
-*listreceivedbyaddress [minconf=1] [includeempty=false]
-*listsinceblock [blockhash] [target-confirmations]
-*listtransactions [account] [count=10] [from=0]
-*listunspent [minconf=1] [maxconf=9999999] ["address",...]
-*makekeypair [prefix]
-*move <fromaccount> <toaccount> <amount> [minconf=1] [comment]
-*ping
-*repairwallet
-*resendtx
-*reservebalance [<reserve> [amount]]
-*sendalert <message> <privatekey> <minver> <maxver> <priority> <id> [cancelupto]
-*sendfrom <fromaccount> <tolanacoinaddress> <amount> [minconf=1] [comment] [comment-to]
-*sendmany <fromaccount> {address:amount,...} [minconf=1] [comment]
-*sendrawtransaction <hex string>
-*sendtoaddress <lanacoinaddress> <amount> [comment] [comment-to]
-*setaccount <lanacoinaddress> <account>
-*settxfee <amount>
-*signmessage <lanacoinaddress> <message>
-*signrawtransaction <hex string> [{"txid":txid,"vout":n,"scriptPubKey":hex,"redeemScript":hex},...] [<privatekey1>,...] [sighashtype="ALL"]
-*stop
-*submitblock <hex data> [optional-params-obj]
-*validateaddress <lanacoinaddress>
-*validatepubkey <lanacoinpubkey>
-*verifymessage <lanacoinaddress> <signature> <message>
-*walletlock
-*walletpassphrase <passphrase> <timeout> [stakingonly]
-*walletpassphrasechange <oldpassphrase> <newpassphrase>
+* addmultisigaddress <nrequired> <'["key","key"]'> [account]
+* addnode <node> <add|remove|onetry>
+* addredeemscript <redeemScript> [account]
+* backupwallet <destination>
+* checkkernel [{"txid":txid,"vout":n},...] [createblocktemplate=false]
+* checkwallet
+* createrawtransaction [{"txid":txid,"vout":n},...] {address:amount,...}
+* decoderawtransaction <hex string>
+* decodescript <hex string>
+* dumpprivkey <lanacoinaddress>
+* dumpwallet <filename>
+* getaccount <lanacoinaddress>
+* getaccountaddress <account>
+* getaddednodeinfo <dns> [node]
+* getaddressesbyaccount <account>
+* getbalance [account] [minconf=1]
+* getbestblockhash
+* getblock <hash> [txinfo]
+* getblockbynumber <number> [txinfo]
+* getblockcount
+* getblockhash <index>
+* getblocktemplate [params]
+* getcheckpoint
+* getconnectioncount
+* getdifficulty
+* getinfo
+* getmininginfo
+* getnettotals
+* getnewaddress [account]
+* getnewpubkey [account]
+* getpeerinfo
+* getrawmempool
+* getrawtransaction <txid> [verbose=0]
+* getreceivedbyaccount <account> [minconf=1]
+* getreceivedbyaddress <lanacoinaddress> [minconf=1]
+* getstakesubsidy <hex string>
+* getstakinginfo
+* getsubsidy [nTarget]
+* gettransaction <txid>
+* getwork [data]
+* getworkex [data, coinbase]
+* help [command]
+* importprivkey <lanacoinprivkey> [label] [rescan=true]
+* importwallet <filename>
+* keypoolrefill [new-size]
+* listaccounts [minconf=1]
+* listaddressgroupings
+* listreceivedbyaccount [minconf=1] [includeempty=false]
+* listreceivedbyaddress [minconf=1] [includeempty=false]
+* listsinceblock [blockhash] [target-confirmations]
+* listtransactions [account] [count=10] [from=0]
+* listunspent [minconf=1] [maxconf=9999999] ["address",...]
+* makekeypair [prefix]
+* move <fromaccount> <toaccount> <amount> [minconf=1] [comment]
+* ping
+* repairwallet
+* resendtx
+* reservebalance [<reserve> [amount]]
+* sendalert <message> <privatekey> <minver> <maxver> <priority> <id> [cancelupto]
+* sendfrom <fromaccount> <tolanacoinaddress> <amount> [minconf=1] [comment] [comment-to]
+* sendmany <fromaccount> {address:amount,...} [minconf=1] [comment]
+* sendrawtransaction <hex string>
+* sendtoaddress <lanacoinaddress> <amount> [comment] [comment-to]
+* setaccount <lanacoinaddress> <account>
+* settxfee <amount>
+* signmessage <lanacoinaddress> <message>
+* signrawtransaction <hex string> [{"txid":txid,"vout":n,"scriptPubKey":hex,"redeemScript":hex},...] [<privatekey1>,...] [sighashtype="ALL"]
+* stop
+* submitblock <hex data> [optional-params-obj]
+* validateaddress <lanacoinaddress>
+* validatepubkey <lanacoinpubkey>
+* verifymessage <lanacoinaddress> <signature> <message>
+* walletlock
+* walletpassphrase <passphrase> <timeout> [stakingonly]
+* walletpassphrasechange <oldpassphrase> <newpassphrase>
 
 
