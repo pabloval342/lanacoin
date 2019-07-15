@@ -91,6 +91,8 @@ labeled 'stale'.
 
 - Coinpaprika: https://coinpaprika.com/coin/lana-lanacoin/
 
+- CoinGecko: https://www.coingecko.com/en/coins/lanacoin
+
 - Blockexplorer: https://chainz.cryptoid.info/lana/
 
 - Instagram: https://www.instagram.com/lanacoin.cryptocurrency/
