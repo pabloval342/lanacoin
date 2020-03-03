@@ -47,6 +47,10 @@ LanaCoin blockchain snapshots/chain states/bootstrap.dat (pCloud: http://pc.cd/8
 
 Responsible disclosure and security contact: security@lanacoin.com
 
+Exchanges and listing contact (digital currency exchange representatives should take note Lana is an open source network with no premine/instamine or any type of crowdfunding and no listing fee budget is awailable): listings@lanacoin.com
+
+Developers contact: dev@lanacoin.com
+
 Development process
 ===========================
 
