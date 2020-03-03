@@ -45,6 +45,8 @@ Estimated coins in existence after end of pow 4.068.900.000 (very very rough est
 
 LanaCoin blockchain snapshots/chain states/bootstrap.dat (pCloud: http://pc.cd/8p8otalK )
 
+Responsible disclosure and security contact: security@lanacoin.com
+
 Development process
 ===========================
 
