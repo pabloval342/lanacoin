@@ -91,6 +91,8 @@ labeled 'stale'.
 
 - Telegram: https://t.me/LanaCoin
 
+- Discord: https://discord.gg/Gf25qN2
+
 - Unified telegram: https://t.me/BlockmasterSi
 
 - Medium: https://medium.com/@LanaCoin/
