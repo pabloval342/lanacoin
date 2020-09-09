@@ -87,6 +87,8 @@ labeled 'stale'.
 
 - Web: https://lanacoin.com/
 
+- Community web: https://lanacoin.org
+
 - Facebook: https://www.facebook.com/LanaCoins/
 
 - Telegram: https://t.me/LanaCoin
@@ -108,6 +110,8 @@ labeled 'stale'.
 - Instagram: https://www.instagram.com/lanacoin.cryptocurrency/
 
 - Youtube: https://www.youtube.com/channel/UC23mCMIR7ecKm3cnbOl1laA
+
+- Lbry.tv: https://lbry.tv/$/invite/@LanaCoin:2
 
 - Reddit: https://www.reddit.com/r/BlockmasterSi
 
