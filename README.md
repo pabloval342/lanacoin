@@ -43,7 +43,9 @@ Testnet RPC port: 15706
 
 Estimated coins in existence after end of pow 4.068.900.000 (very very rough estimate, depends on how many people will be staking...etc)
 
-LanaCoin blockchain snapshots/chain states/bootstrap.dat (pCloud: http://pc.cd/8p8otalK )
+LanaCoin mainnet blockchain snapshots/chain states/bootstrap.dat: (pCloud: http://pc.cd/8p8otalK )
+
+LanaCoin testnet blockchain snapshots/chain states/bootstrap.dat (pCloud: http://u.pc.cd/HDOitalKif - you need testnet $LANA email developer contact or ask on Lana telegram) 
 
 Responsible disclosure and security contact: security@lanacoin.com
 
