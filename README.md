@@ -91,6 +91,8 @@ labeled 'stale'.
 
 - Web: https://lanacoin.com/
 
+- Web2: https://lanacoin.org
+
 - Community web: https://lanacoin.org
 
 - Facebook: https://www.facebook.com/LanaCoins/
